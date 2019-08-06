@@ -1,0 +1,33 @@
+{
+	"host": "localhost",
+	"port": 3030,
+	"public": "../public/",
+	"paginate": {
+		"default": 10,
+		"max": 50
+	},
+	"seed": "true",
+	"nedb": "../data",
+	"authentication": {
+		"secret": "d5a16f3b425a3b8efb568f75a49112cc9e152f8779cf009c017b1c1b84b597ebf611d9f24dc35fd918eeab18158d0cd75eddfb908bd9bdc0634a64c177108ebeca38c261812b7c7c21de8317142a751dcd3b821ef0903aa9e60662861a41b7dc3e43804f969844ea2c0ed4fabf225606ec9ba03305156469f3477764d2fa742757910d63270e052a779ca4455e127e74c14fe7f385d888640c54d89530084f88dfbfbe4f9c199219f8b309fdd3d6c1de4c1b3f7285d27c3873675d5ec26735c030f8f858a3cc5fbad09056603d96fd0f7c3b83596e21a4cee96a1a2b9358eb9b9d7b419c6343b19064d5c89fe92be3e33af3a111f3863436c3a89d968ead7888",
+		"strategies": ["jwt", "local"],
+		"path": "/authentication",
+		"service": "users",
+		"jwt": {
+			"header": {
+				"typ": "access"
+			},
+			"audience": "https://yourdomain.com",
+			"subject": "anonymous",
+			"issuer": "feathers",
+			"algorithm": "HS256",
+			"expiresIn": "1d"
+		},
+		"local": {
+			"entity": "user",
+			"usernameField": "email",
+			"passwordField": "password"
+		}
+	},
+	"mongodb": "mongodb://localhost:27017/churchcms"
+}

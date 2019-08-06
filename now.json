@@ -1,0 +1,10 @@
+{
+	"name": "churchcms",
+	"alias": "churchcms.now.sh",
+	"env": {
+		"NODE_ENV": "production",
+		"MONGO_URL": "@churchcms-mongo-url",
+		"API_HOST": "https://churchcms.now.sh",
+		"AUTH_SECRET": "@auth-secret"
+	}
+}

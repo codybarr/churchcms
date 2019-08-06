@@ -1,0 +1,14 @@
+{
+	"name": "churchcms",
+	"version": "1.0.0",
+	"description": "Custom Church CMS built by No Sweat Tech with ❤️ in Feathers and Vue.",
+	"scripts": {
+		"deploy": "now rm churchcms --safe --yes && now && now alias",
+		"scale-up": "now scale churchcms.now.sh 1",
+		"scale-down": "now scale churchcms.now.sh all",
+		"start": "cd server && yarn install && node src/"
+	},
+	"repository": "https://rabydoc@bitbucket.org/rabydoc/churchcms.git",
+	"author": "Cody Barr <cody.barr@gmail.com>",
+	"license": "MIT"
+}

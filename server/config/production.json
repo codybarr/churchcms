@@ -1,0 +1,33 @@
+{
+	"host": "churchcms.now.sh",
+	"port": 80,
+	"public": "../public/",
+	"mongodb": "MONGO_URL",
+	"paginate": {
+		"default": 10,
+		"max": 50
+	},
+	"seed": false,
+	"nedb": "../data",
+	"authentication": {
+		"secret": "AUTH_SECRET",
+		"strategies": ["jwt", "local"],
+		"path": "/authentication",
+		"service": "users",
+		"jwt": {
+			"header": {
+				"typ": "access"
+			},
+			"audience": "https://churchcms.now.sh",
+			"subject": "anonymous",
+			"issuer": "feathers",
+			"algorithm": "HS256",
+			"expiresIn": "1d"
+		},
+		"local": {
+			"entity": "user",
+			"usernameField": "email",
+			"passwordField": "password"
+		}
+	}
+}
